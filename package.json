@@ -1,5 +1,6 @@
 {
   "name": "df_repro",
+  "type": "commonjs",
   "scripts": {
     "run": "func start"
   },
