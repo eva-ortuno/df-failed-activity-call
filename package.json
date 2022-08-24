@@ -1,0 +1,9 @@
+{
+  "name": "df_repro",
+  "scripts": {
+    "run": "func start"
+  },
+  "dependencies": {
+    "durable-functions": "^2.0.2"
+  }
+}
