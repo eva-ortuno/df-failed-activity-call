@@ -1,3 +1,4 @@
-﻿module.exports = async function (context) {
-    return `Hello ${context.bindings.name}!`;
+﻿// activity function only throwing an error
+module.exports = async function (context) {
+    throw new Error("The activity function DA_fail has thrown an error. This is the error message.")
 };
