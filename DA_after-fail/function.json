@@ -5,5 +5,7 @@
       "type": "activityTrigger",
       "direction": "in"
     }
-  ]
+  ],
+  "entryPoint": "daAfterFail",
+  "scriptFile": "../dist/DA_after-fail/index.js"
 }

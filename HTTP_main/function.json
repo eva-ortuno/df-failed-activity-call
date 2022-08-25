@@ -20,5 +20,6 @@
       "type": "orchestrationClient",
       "direction": "in"
     }
-  ]
+  ],
+  "scriptFile": "../dist/HTTP_main/index.js"
 }

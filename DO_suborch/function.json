@@ -5,5 +5,7 @@
       "type": "orchestrationTrigger",
       "direction": "in"
     }
-  ]
+  ],
+  "entryPoint": "doSuborch",
+  "scriptFile": "../dist/DO_suborch/index.js"
 }

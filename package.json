@@ -2,9 +2,11 @@
   "name": "df_repro",
   "type": "commonjs",
   "scripts": {
-    "run": "func start"
+    "run": "build & func start",
+    "build": "tsc"
   },
   "dependencies": {
-    "durable-functions": "^2.0.2"
+    "durable-functions": "^2.0.2",
+    "typescript": "^4.7.4"
   }
 }
