@@ -3,13 +3,14 @@ import {IOrchestrationFunctionContext} from "durable-functions/lib/src/iorchestr
 
 
 // activity function only throwing an error
-export const daFail = async function (context: Context) {
+export const daFail = async function (context: Context, input: any) {
+
     throw new Error("The activity function DA_fail has thrown an error. This is the error message.")
 
-    return "DA_fail finished";
+    return input + "_ DA_fail finished";
 };
 
 
-export function callDaFail(context: IOrchestrationFunctionContext) {
-    return context.df.callActivity("DA_fail");
+export function callDaFail(context: IOrchestrationFunctionContext, input: any) {
+    return context.df.callActivity("DA_fail", input);
 }

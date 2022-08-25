@@ -2,7 +2,7 @@
   "name": "df_repro",
   "type": "commonjs",
   "scripts": {
-    "run": "build & func start",
+    "run": "tsc & func start",
     "build": "tsc"
   },
   "dependencies": {

@@ -7,13 +7,15 @@ const RETRY = 5;
 let attempt = 1;
 
 export const doSuborch = df.orchestrator(function* (context) {
-    console.log(`Orchestrator execution attempt ${attempt} over ${RETRY} allowed`);
+    let res;
+    const input = context.df.getInput();
+    console.log(`Orchestrator execution attempt ${attempt} over ${RETRY} allowed with input ${input}`);
     try {
-        yield callDaFail(context);
+        yield callDaFail(context, input);
     } catch (e) {
         console.log("error caught - continue ...");
 
-        yield callDaAfterFail(context);
+        res = yield callDaAfterFail(context, input);
 
         const currentDate = context.df.currentUtcDateTime;
         const nextDate = new Date(currentDate.getTime() + 5 * 1e3);
@@ -23,13 +25,14 @@ export const doSuborch = df.orchestrator(function* (context) {
             console.log("Waiting for 5 seconds before resuming orchestrator");
             yield timer;
             attempt ++;
-            context.df.continueAsNew(undefined);
+            context.df.continueAsNew(res);
         }
     }
 
-    return;
+    console.log("Process finished with result : ", res);
+    return res;
 });
 
-export function startSuborchestrate(context: IOrchestrationFunctionContext) {
-    return context.df.callSubOrchestrator("DO_suborch");
+export function startSuborchestrate(context: IOrchestrationFunctionContext, input: unknown) {
+    return context.df.callSubOrchestrator("DO_suborch", input);
 }
