@@ -19,3 +19,7 @@ With this repository, we tried to reproduce the bug in a simpler environment.
 The following behaviour should be observed : the orchestrator, supposed to be retried 5 times, stops right after the failed activity function `DA_fail` and exit the orchestrator without retrying. 
 
 ![image](https://user-images.githubusercontent.com/90448715/187197332-3b5a64f8-60eb-4853-a681-3db99822c4eb.png)
+
+
+### What triggered the error ? 
+After many attempt, the bug was reproduced when installing the `DurableTask` extension : https://github.com/Azure/azure-functions-durable-extension
