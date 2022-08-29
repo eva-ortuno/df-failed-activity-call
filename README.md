@@ -9,12 +9,13 @@ With this repository, we tried to reproduce the bug in a simpler environment.
 ### Set-up 
 
 1. Clone the repository : `git clone git@github.com:eva-ortuno/df-failed-activity-call.git`
-2. In the root directory of the project, `npm install`
-3. To start the project, `tsc & func start` 
+2. Install DurableTask :  `func extensions install -p Microsoft.Azure.WebJobs.Extensions.DurableTask -v 2.5.0`
+3. In the root directory of the project, `npm install`
+4. To start the project, `tsc & func start` 
 
 ![image](https://user-images.githubusercontent.com/90448715/187197406-d3c5229c-9877-402e-ac46-258dc6f0b97c.png)
 
-4. Trigger the http request `http://localhost:7071/api/HTTP_main` - use Postman or Insmnia for example
+5. Trigger the http request `http://localhost:7071/api/HTTP_main` - use Postman or Insmnia for example
 
 The following behaviour should be observed : the orchestrator, supposed to be retried 5 times, stops right after the failed activity function `DA_fail` and exit the orchestrator without retrying. 
 
