@@ -23,4 +23,6 @@ The following behaviour should be observed : the orchestrator, supposed to be re
 
 
 ### What triggered the error ? 
-After many attempt, the bug was reproduced when installing the `DurableTask` extension : https://github.com/Azure/azure-functions-durable-extension
+After many attempt, the bug was reproduced when installing the `DurableTask` extension : https://github.com/Azure/azure-functions-durable-extension The required minimum version is 2.4.1 - see log when version 1.8.0 is installed: 
+![image](https://user-images.githubusercontent.com/90448715/187208900-7385fc12-fa10-4100-84aa-72f2d330b7a4.png)
+From version 2.6.0 onwards, the bug is not observed anymore.
